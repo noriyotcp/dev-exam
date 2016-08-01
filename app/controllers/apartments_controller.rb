@@ -15,6 +15,8 @@ class ApartmentsController < ApplicationController
   # GET /apartments/new
   def new
     @apartment = Apartment.new
+
+    Apartment::NEAREST_STATIONS_COUNT.times { @apartment.nearest_stations.build }
   end
 
   # GET /apartments/1/edit
@@ -69,6 +71,6 @@ class ApartmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apartment_params
-      params.require(:apartment).permit(:name, :rent, :address, :building_age, :note)
+      params.require(:apartment).permit(:name, :rent, :address, :building_age, :note, nearest_stations_attributes: [:id, :line, :name, :minutes_walk])
     end
 end
