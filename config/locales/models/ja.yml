@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       apartment: 物件
-      nearest_stations: 最寄り駅
+      nearest_station: 最寄り駅
     attributes:
       apartment:
         name: 物件名
