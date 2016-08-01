@@ -1,47 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= Apartment.human_attribute_name :name %>:</strong>
   <%= @apartment.name %>
 </p>
 
 <p>
-  <strong>Rent:</strong>
-  <%= @apartment.rent %>円
+  <strong><%= Apartment.human_attribute_name :rent %>:</strong>
+  <%= number_to_currency @apartment.rent %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= Apartment.human_attribute_name :address %>:</strong>
   <%= @apartment.address %>
 </p>
 
 <p>
-  <strong>Building age:</strong>
-  <%= @apartment.building_age %>年
+  <strong><%= Apartment.human_attribute_name :building_age %></strong>
+  <%= @apartment.building_age %><%= t('datetime.prompts.year') %>
 </p>
 
 <p>
-  <strong>Note:</strong>
+  <strong><%= Apartment.human_attribute_name :note %></strong>
   <%= @apartment.note %>
 </p>
 
 <hr>
 
 <% @nearest_stations.each.with_index(1) do |ns, i| %>
-  <h3>最寄り駅<%= i %></h3>
+  <h3><%= NearestStation.model_name.human %><%= i %></h3>
   <p>
-    <strong>路線名:</strong>
+    <strong><%= NearestStation.human_attribute_name :line %></strong>
     <%= ns.line %>
   </p>
   <p>
-    <strong>駅名:</strong>
+    <strong><%= NearestStation.human_attribute_name :name %></strong>
     <%= ns.name %>
   </p>
   <p>
-    <strong>徒歩分数:</strong>
-    <%= ns.minutes_walk %>分
+    <strong><%= NearestStation.human_attribute_name :minutes_walk %></strong>
+    <%= ns.minutes_walk %><%= t('datetime.prompts.minute') %>
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_apartment_path(@apartment) %> |
-<%= link_to 'Back', apartments_path %>
+<%= link_to t('helpers.action.edit'), edit_apartment_path(@apartment) %> |
+<%= link_to t('helpers.action.back'), apartments_path %>
