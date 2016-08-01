@@ -142,6 +142,13 @@ ja:
       create: 登録する
       submit: 保存する
       update: 更新する
+    action:
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      back: 戻る
+    confirm:
+      delete: 削除しますか？
   number:
     currency:
       format:
