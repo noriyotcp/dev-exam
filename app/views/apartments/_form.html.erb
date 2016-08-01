@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :rent %>
-    <%= f.number_field :rent %>円
+    <%= f.number_field :rent, min: 0 %>円
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :building_age %>
-    <%= f.number_field :building_age %>年
+    <%= f.number_field :building_age, min: 0 %>年
   </div>
 
   <div class="field">
@@ -52,7 +52,7 @@
 
     <div class="field">
       <%= ns.label :minutes_walk %>
-      <%= ns.number_field :minutes_walk %>分
+      <%= ns.number_field :minutes_walk, min: 0 %>分
     </div>
   <% end %>
 
