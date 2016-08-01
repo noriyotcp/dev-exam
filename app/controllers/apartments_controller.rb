@@ -10,6 +10,7 @@ class ApartmentsController < ApplicationController
   # GET /apartments/1
   # GET /apartments/1.json
   def show
+    @nearest_stations = @apartment.nearest_stations
   end
 
   # GET /apartments/new
