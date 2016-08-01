@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :rent %>
-    <%= f.number_field :rent, min: 0 %>円
+    <%= number_to_currency f.number_field :rent, min: 0 %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :building_age %>
-    <%= f.number_field :building_age, min: 0 %>年
+    <%= f.number_field :building_age, min: 0 %><%= t('datetime.prompts.year') %>
   </div>
 
   <div class="field">
@@ -39,7 +39,7 @@
   <hr>
 
   <%= f.fields_for :nearest_stations do |ns| %>
-    <h3>最寄り駅<%= (ns.index + 1) %></h3>
+    <h3><%= NearestStation.model_name.human %><%= (ns.index + 1) %></h3>
     <div class="field">
       <%= ns.label :line %>
       <%= ns.text_field :line %>
@@ -52,7 +52,7 @@
 
     <div class="field">
       <%= ns.label :minutes_walk %>
-      <%= ns.number_field :minutes_walk, min: 0 %>分
+      <%= ns.number_field :minutes_walk, min: 0 %><%= t('datetime.prompts.minute') %>
     </div>
   <% end %>
 

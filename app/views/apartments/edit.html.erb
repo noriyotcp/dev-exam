@@ -1,6 +1,6 @@
-<h1>Editing Apartment</h1>
+<h1><%= Apartment.model_name.human + t('.edit') %></h1>
 
 <%= render 'form', apartment: @apartment %>
 
-<%= link_to 'Show', @apartment %> |
-<%= link_to 'Back', apartments_path %>
+<%= link_to t('helpers.action.show'), @apartment %> |
+<%= link_to t('helpers.action.back'), apartments_path %>

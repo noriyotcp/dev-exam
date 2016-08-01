@@ -3,3 +3,7 @@ ja:
     index:
       index: 一覧
       submit: 物件を登録する
+    new:
+      new: 登録
+    edit:
+      edit: 編集
