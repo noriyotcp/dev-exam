@@ -207,3 +207,8 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
+  flash:
+    notice:
+      create: "%{model_name}を作成しました"
+      update: "%{model_name}を更新しました"
+      destroy: "%{model_name}を削除しました"
